@@ -2,6 +2,7 @@
 const express = require("express");
 const app = express()
 const cors = require("cors");   
+const axios = require("axios");
 require('dotenv').config()
 const {PORT} = process.env || 8080;
 
@@ -12,9 +13,15 @@ app.use(express.json()); // to get request body
 app.use(express.static('public')); // to get images as 
 
 //Routes
-app.use("/", (req,res) =>{
-    res.json({"users":["userOne","userTwo", "userThree"]})
+app.get("/shaun", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/747?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
 });
+
+
 
 app.listen(8080, () =>{
     console.log(`Running on port ${PORT}....`)
