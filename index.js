@@ -20,6 +20,20 @@ app.get("/shaun", (req,res) =>{
            console.log(response.data) 
         })
 });
+app.get("/hotfuzz", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/4638?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
+});
+app.get("/worldsend", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/107985?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
+});
 
 
 
