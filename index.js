@@ -34,6 +34,13 @@ app.get("/worldsend", (req,res) =>{
            console.log(response.data) 
         })
 });
+app.get("/babydriver", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/339403-?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
+});
 
 
 
