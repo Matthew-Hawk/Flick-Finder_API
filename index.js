@@ -41,6 +41,20 @@ app.get("/babydriver", (req,res) =>{
            console.log(response.data) 
         })
 });
+app.get("/scott", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/22538-?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
+});
+app.get("/last", (req,res) =>{
+    axios.get("https://api.themoviedb.org/3/movie/576845-?api_key=1982fd1af252ec342c42890ca80f692a&language=en-US")
+        .then((response) =>{
+           res.send(response.data)
+           console.log(response.data) 
+        })
+});
 
 
 
